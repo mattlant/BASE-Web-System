@@ -1,0 +1,274 @@
+/* Author: Steve Arbour
+ * This source file is part of the BASE Web Framework System
+ * Date: 26 July 2007
+ * Copyright © 2007 BASE Web Systems Inc.
+ * This software and its source code is protected by international copyright laws.
+ * Any violation of this copyright will result in prosecution to the fullest
+ * permissible extent of the law
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using SD.LLBLGen.Pro.ORMSupportClasses;
+using BASE.Data.LLDAL.EntityClasses;
+using BASE.Data.LLDAL.HelperClasses;
+//using BASE.Data.LLDAL.RelationClasses;
+using BASE.Data.LLDAL.DatabaseSpecific;
+
+namespace BASE.Data.Helpers
+{
+    /// <summary>
+    /// This class is used to offer bindable function and others tools functions to manage the LinkBarEntity
+    /// </summary>
+    [System.ComponentModel.DataObject]
+    public static class LinkBarDataHelper
+    {
+
+        /// <summary>
+        /// This method is used to retreive a single LinkBarEntity by it Primary Key
+        /// </summary>
+        /// <param name="uID">Unique ID</param>
+        /// <returns>An entity if found, null if nothing found.</returns>
+        public static LinkBarEntity SelectSingle(int uID)
+        {
+            LinkBarEntity lbe = new LinkBarEntity(uID);
+            DataAccessAdapter ds = new DataAccessAdapter();
+            if (ds.FetchEntity(lbe) == true)
+            {
+                return lbe;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+ 
+        #region SELECT GROUP
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> Select()
+        {
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, null);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="uid">The UID of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByUID(System.Int32 uid)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.UID == uid);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="suid">The Site UID of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectBySiteUID(System.Int32 suid)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.SiteUID == suid);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="name">The Name of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByName(System.String name)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.Name == name);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="bflag">The Is Auto Generated Flag of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByIsAutoGenerated(System.Boolean bflag)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.IsAutoGenerated == bflag);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="linktemplateuid">The Link Template UID of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByLinkTemplateUID(System.Int32 linktemplateuid)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.LinkTemplateUID == linktemplateuid);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="ouid">The Owner UID of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByOwnerUID(System.Int32 ouid)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.OwnerUID == ouid);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+
+        /// <summary>
+        /// This function is used to query the data source for records.
+        /// </summary>
+        /// <param name="bytes">The Row Version of the requested entity.</param>
+        /// <returns>EntityCollection<LinkBarEntity></returns>
+        public static EntityCollection<LinkBarEntity> SelectByRowVersion(System.Byte[] bytes)
+        {
+            PredicateExpression filter = new PredicateExpression();
+            filter.Add(LinkBarFields.RowVersion == bytes);
+
+            RelationPredicateBucket bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(filter);
+
+            EntityCollection<LinkBarEntity> linksbars = new EntityCollection<LinkBarEntity>();
+            DataAccessAdapter ds = new DataAccessAdapter();
+            ds.FetchEntityCollection(linksbars, bucket);
+            return linksbars;
+        }
+        #endregion
+
+        #region INSERT GROUP
+        /// <summary>
+        /// This function is used to insert a LinkBarEntity in the storage area.
+        /// </summary>
+        /// <param name="siteuid">Site UID</param>
+        /// <param name="sectionuid">Section UID</param>
+        /// <param name="name">Name</param>
+        /// <param name="isautogenerated">Is Auto Generated Flag</param>
+        /// <param name="linktemplateuid">Link Template UID</param>
+        /// <param name="owneruid">Owner UID</param>
+        /// <returns>True on success, False on fail</returns>
+        public static bool Insert(
+            System.Int32 siteuid,
+            System.Int32 sectionuid,
+            System.String name,
+            System.Boolean isautogenerated,
+            System.Int32 linktemplateuid,
+            System.Int32 owneruid)
+        {
+            LinkBarEntity lb = new LinkBarEntity();
+            lb.SiteUID = siteuid;
+            lb.SectionUID = sectionuid;
+            lb.Name = name;
+            lb.IsAutoGenerated = isautogenerated;
+            lb.LinkTemplateUID = linktemplateuid;
+            lb.OwnerUID = owneruid;
+            DataAccessAdapter ds = new DataAccessAdapter();
+            return ds.SaveEntity(lb);
+        }
+        #endregion
+
+        #region DELETE GROUP
+        /// <summary>
+        /// This function is used to delete an LinkBarEntity.
+        /// </summary>
+        /// <param name="uid">Unique ID</param>
+        /// <returns>True on success, false on fail.</returns>
+        public static bool Delete(System.Int32 uid)
+        {
+            LinkBarEntity lb = new LinkBarEntity(uid);
+            DataAccessAdapter ds = new DataAccessAdapter();
+            return ds.DeleteEntity(lb);
+        }
+        #endregion
+
+        #region UPDATE GROUP
+        /// <summary>
+        /// This function is used to update an LinkBarEntity.
+        /// </summary>
+        /// <param name="uid">Unique ID</param>
+        /// <param name="siteuid">Site UID</param>
+        /// <param name="sectionuid">Section UID</param>
+        /// <param name="name">Name</param>
+        /// <param name="isautogenerated">Is Auto Generated Flag</param>
+        /// <param name="linktemplateuid">Link Template UID</param>
+        /// <param name="owneruid">Owner UID</param>
+        /// <returns>True on success, False on fail</returns>
+        public static bool Update(
+            System.Int32 uid,
+            System.Int32 siteuid,
+            System.Int32 sectionuid,
+            System.String name,
+            System.Boolean isautogenerated,
+            System.Int32 linktemplateuid,
+            System.Int32 owneruid)
+        {
+            LinkBarEntity lb = new LinkBarEntity(uid);
+            lb.IsNew = false;
+            lb.SiteUID = siteuid;
+            lb.SectionUID = sectionuid;
+            lb.Name = name;
+            lb.IsAutoGenerated = isautogenerated;
+            lb.LinkTemplateUID = linktemplateuid;
+            lb.OwnerUID = owneruid;
+            DataAccessAdapter ds = new DataAccessAdapter();
+            return ds.SaveEntity(lb);
+        }
+        #endregion
+    }
+}

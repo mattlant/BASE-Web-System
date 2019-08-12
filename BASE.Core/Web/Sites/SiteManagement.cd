@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Segoe UI" Size="9" />
+  <Comment CommentText="Site Manager is an instance class, one per site">
+    <Position X="7.792" Y="0.875" Height="0.75" Width="1.429" />
+  </Comment>
+  <Comment CommentText="Section Manager is an instance class, one per Section">
+    <Position X="9.531" Y="0.906" Height="0.75" Width="1.429" />
+  </Comment>
+  <Comment CommentText="Page Manager is a static class.">
+    <Position X="11.281" Y="0.948" Height="0.75" Width="1.429" />
+  </Comment>
+  <Comment CommentText="TemplateManager is a static class for managing everything related to templates">
+    <Position X="14.678" Y="0.5" Height="1.146" Width="1.429" />
+  </Comment>
+  <Comment CommentText="System Manager is a Singleton instance, so only 1 instance for the whole system">
+    <Position X="1.334" Y="0.5" Height="0.99" Width="1.429" />
+  </Comment>
+  <Class Name="BASE.Web.Sites.PageManager">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Web\Sites\PageManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASE.Web.Sites.SectionManager">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Web\Sites\SectionManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASE.Web.Sites.SiteManager">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Web\Sites\SiteManager.cs</FileName>
+      <HashCode>AAQAAAAAAQAAAAAAAAAAAAAAAEAAAAAAAEQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASE.Web.Sites.TemplateManager">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Web\Sites\TemplateManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASE.SystemManager">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SystemManager.cs</FileName>
+      <HashCode>ACAAACAAACAAAAQgIACAAAAAAAAAAAAgAEAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASE.Modules.ModuleManager">
+    <Position X="3.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Modules\ModuleManager.cs</FileName>
+      <HashCode>ABAkAAkAAAAAQQAAAAAIAAAAgAAAAAAEAAAEAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

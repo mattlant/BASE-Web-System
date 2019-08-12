@@ -1,0 +1,288 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0D34909-4831-4F4D-B015-A2ACCEFBB176}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BASE</RootNamespace>
+    <AssemblyName>BASECoreLib</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ASLDEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BASECoreLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mattlant.Imaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Dev\binres\mlcBin\mattlant.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="mattlant.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Dev\binres\mlcBin\mattlant.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="mattlant.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Dev\binres\mlcBin\mattlant.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer.NET20, Version=2.5.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\dev\binres\llbl2\SD.LLBLGen.Pro.DQE.SqlServer.NET20.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses.NET20, Version=2.5.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\dev\binres\llbl2\SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssertionFailureException.cs" />
+    <Compile Include="Caching\BASECache.cs" />
+    <Compile Include="Caching\CacheManager_Main.cs" />
+    <Compile Include="Caching\CacheManager_SiteData.cs" />
+    <Compile Include="Collections\KeyValueCollection.cs" />
+    <Compile Include="Configuration\ConfigurationManager_adminCatagories.cs" />
+    <Compile Include="Configuration\ConfigurationManager_basesettings.cs" />
+    <Compile Include="Configuration\ConfigurationManager_EndPointPlugins.cs" />
+    <Compile Include="Configuration\ConfigurationManager_HtmlParserPlugins.cs" />
+    <Compile Include="Configuration\ConfigurationManager_Main.cs" />
+    <Compile Include="Configuration\ConfigurationManager_ConfigHandlers.cs" />
+    <Compile Include="Configuration\ConfigurationManager_TagParserPlugins.cs" />
+    <Compile Include="Configuration\ConfigurationManager_UrlParserHandlers.cs" />
+    <Compile Include="Configuration\ConfigurationManager_UrlSegmentExclusions.cs" />
+    <Compile Include="Configuration\CoreDefHandler.cs" />
+    <Compile Include="Configuration\Definitions\EntitiesSectionHandler.cs" />
+    <Compile Include="Configuration\Definitions\ModulesSectionHandler.cs" />
+    <Compile Include="Configuration\IConfigurationFileHandler.cs" />
+    <Compile Include="Data\CustomValidators\AdminEmail.cs" />
+    <Compile Include="Data\CustomValidators\DomainName.cs" />
+    <Compile Include="Data\CustomValidators\Email.cs" />
+    <Compile Include="Data\CustomValidators\ExpiryDate.cs" />
+    <Compile Include="Data\CustomValidators\IPRange.cs" />
+    <Compile Include="Data\CustomValidators\LastLogin.cs" />
+    <Compile Include="Data\CustomValidators\NameServerAddress.cs" />
+    <Compile Include="Data\CustomValidators\OwnerGUID.cs" />
+    <Compile Include="Data\CustomValidators\OwnerUID.cs" />
+    <Compile Include="Data\CustomValidators\Password.cs" />
+    <Compile Include="Data\CustomValidators\ReferrerGUID.cs" />
+    <Compile Include="Data\CustomValidators\SiteDescription.cs" />
+    <Compile Include="Data\CustomValidators\SiteGUID.cs" />
+    <Compile Include="Data\CustomValidators\SiteName.cs" />
+    <Compile Include="Data\CustomValidators\SiteTypeUID.cs" />
+    <Compile Include="Data\CustomValidators\SMTPServerAddress.cs" />
+    <Compile Include="Data\CustomValidators\Username.cs" />
+    <Compile Include="Data\Helpers\ActionDataHelper.cs" />
+    <Compile Include="Data\Helpers\AttachmentListDataHelper.cs" />
+    <Compile Include="Data\Helpers\CustomGroupPermissionDataHelper.cs" />
+    <Compile Include="Data\Helpers\CustomPermissionTypeDataHelper.cs" />
+    <Compile Include="Data\Helpers\CustomPropertyDataHelper.cs" />
+    <Compile Include="Data\Helpers\CustomUserPermissionDataHelper.cs" />
+    <Compile Include="Data\Helpers\DataHelper.cs" />
+    <Compile Include="Data\Helpers\EndPointAliasDataHelper.cs" />
+    <Compile Include="Data\Helpers\EntityCustomPropertyDataHelper.cs" />
+    <Compile Include="Data\Helpers\GroupDataHelper.cs" />
+    <Compile Include="Data\Helpers\GroupEntityPermissionDataHelper.cs" />
+    <Compile Include="Data\Helpers\GroupMembershipListDataHelper.cs" />
+    <Compile Include="Data\Helpers\GroupRecordPermissionDataHelper.cs" />
+    <Compile Include="Data\Helpers\LinkBarDataHelper.cs" />
+    <Compile Include="Data\Helpers\LinkDataHelper.cs" />
+    <Compile Include="Data\Helpers\ModuleInstanceDataHelper.cs" />
+    <Compile Include="Data\Helpers\ModuleSetDataHelper.cs" />
+    <Compile Include="Data\Helpers\ModuleSetModuleDataHelper.cs" />
+    <Compile Include="Data\Helpers\PageDataHelper.cs" />
+    <Compile Include="Data\Helpers\PageRegionDataHelper.cs" />
+    <Compile Include="Data\Helpers\RecordCustomPropertyDataHelper.cs" />
+    <Compile Include="Data\Helpers\SectionDataHelper.cs" />
+    <Compile Include="Data\Helpers\SiteModuleSetListDataHelper.cs" />
+    <Compile Include="Data\Helpers\SiteNetInfoDataHelper.cs" />
+    <Compile Include="Data\Helpers\SiteSubSiteDataHelper.cs" />
+    <Compile Include="Data\Helpers\SiteTypeDataHelper.cs" />
+    <Compile Include="Data\Helpers\SiteVirtualInfoDataHelper.cs" />
+    <Compile Include="Data\Helpers\TemplateChunkDataHelper.cs" />
+    <Compile Include="Data\Helpers\TemplateDataHelper.cs" />
+    <Compile Include="Data\Helpers\TemplateSetDataHelper.cs" />
+    <Compile Include="Data\Helpers\TemplateTypeDataHelper.cs" />
+    <Compile Include="Data\Helpers\UserDataHelper.cs" />
+    <Compile Include="Data\Helpers\UserEntityPermissionDataHelper.cs" />
+    <Compile Include="Data\Helpers\UserRecordPermissionDataHelper.cs" />
+    <Compile Include="DefinitionManager.cs" />
+    <Compile Include="Configuration\ISectionHandler.cs" />
+    <Compile Include="IInitFromXml.cs" />
+    <Compile Include="Modules\ModuleDefinitionStructure.cs" />
+    <Compile Include="Reflection\TypeHelper.cs" />
+    <Compile Include="Security\AuthHelper.cs" />
+    <Compile Include="Security\BASEPrinciple.cs" />
+    <Compile Include="SystemCompilationTypeEnum.cs" />
+    <Compile Include="Web\BASEApplication.cs" />
+    <Compile Include="Web\Security\BASEAuthenticationModule.cs" />
+    <Compile Include="Web\Security\BASEAuthorization.cs" />
+    <Compile Include="Web\Security\BASEAuthorizationModule.cs" />
+    <Compile Include="Web\BASEQS.cs" />
+    <Compile Include="Web\BASERequest.cs" />
+    <Compile Include="Web\EndPoints\ContentMergingException.cs" />
+    <Compile Include="Web\EndPoints\DefaultFileHandler.cs" />
+    <Compile Include="Web\EndPoints\EndPointAliasLightEntity.cs" />
+    <Compile Include="Web\EndPoints\EndPointEventArgs.cs" />
+    <Compile Include="Web\EndPoints\EndPointException.cs" />
+    <Compile Include="Web\EndPoints\EndPointManager.cs" />
+    <Compile Include="Web\EndPoints\IEndPointPlugin.cs" />
+    <Compile Include="Web\EndPoints\Plugins\EndPointPlugin.cs" />
+    <Compile Include="Web\EndPoints\PageSkinningException.cs" />
+    <Compile Include="Web\EndPoints\Plugins\SkinningPlugin.cs" />
+    <Compile Include="Web\EndPoints\SkinnedEndPoint.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\EndPoints\Plugins\VirtualEndPointPlugin.cs" />
+    <Compile Include="Web\HtmlParsing\BmlRegion.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlChunk.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlChunkType.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlDoc.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlLiteralChunk.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlParser.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlParserHelper.cs" />
+    <Compile Include="Web\HtmlParsing\HtmlTag.cs" />
+    <Compile Include="Web\HtmlParsing\IHtmlParserPlugin.cs" />
+    <Compile Include="Web\HtmlParsing\Plugins\BmlParserPlugin.cs" />
+    <Compile Include="Web\IBASEHttpModule.cs" />
+    <Compile Include="Web\InitializeRequestHttpModule.cs" />
+    <Compile Include="Web\PageMethodType.cs" />
+    <Compile Include="Web\HtmlParsing\Plugins\BASETagParserPlugin.cs" />
+    <Compile Include="Web\HtmlParsing\ITagParserPlugin.cs" />
+    <Compile Include="Web\HtmlParsing\TagParser.cs" />
+    <Compile Include="Web\Security\BASEAuthentication.cs" />
+    <Compile Include="Web\Security\BASEAuthenticationTicket.cs" />
+    <Compile Include="Web\Security\BASEEncryption.cs" />
+    <Compile Include="Web\UI\Controls\AdminPanelDefinition.cs" />
+    <Compile Include="Web\UI\Controls\AdminPanelXmlAttributes.cs" />
+    <Compile Include="Web\UI\Controls\BASEControlDefinition.cs" />
+    <Compile Include="Web\UI\Controls\BASEForm.cs" />
+    <Compile Include="Web\UI\Controls\BASEUserControlDefinition.cs" />
+    <Compile Include="Web\UI\Controls\BASEUserControlDefinitionXmlAttributes.cs" />
+    <Compile Include="Web\UI\Controls\IBASEControl.cs" />
+    <Compile Include="Web\UI\Controls\PagePanelDefinition.cs" />
+    <Compile Include="Web\UI\Controls\PagePanelXmlAttributes.cs" />
+    <Compile Include="Web\UI\Controls\PanelXmlAttributes.cs" />
+    <Compile Include="Web\UI\Controls\RegionPlaceHolder.cs" />
+    <Compile Include="Web\UI\Controls\SettingsWidgetDefinition.cs" />
+    <Compile Include="Web\UI\Controls\WidgetDefinition.cs" />
+    <Compile Include="Web\EndPoints\EndPoint.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\EndPoints\IEndPoint.cs" />
+    <Compile Include="Web\EndPoints\VirtualEndPoint.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\CuteEditorHelper.cs" />
+    <Compile Include="Web\UI\Controls\RegionPanel.cs" />
+    <Compile Include="Web\UrlParsing\IUrlParserPlugin.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\DomainAliasResolverS1.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\EndPointResolverS4.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\ExclusionListResolver.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\NonExclusionSiteTranslator.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\SectionNameResolverS3.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\SubSiteAliasResolverS2.cs" />
+    <Compile Include="Web\UrlParsing\Plugins\UrlDiag.cs" />
+    <Compile Include="Web\UrlParsing\UrlParserHttpModule.cs" />
+    <Compile Include="Web\UrlParsing\UrlQueryString.cs" />
+    <Compile Include="Web\UrlParsing\UrlSegmentExclusion.cs" />
+    <Compile Include="Web\WebUtils.cs" />
+    <Compile Include="Xml\DefinitionBaseXmlAttributes.cs" />
+    <Compile Include="Xml\XmlDefinitionBase.cs" />
+    <Compile Include="BASEGenericException.cs" />
+    <Compile Include="Data\EntityTypeGUIDRecordUIDPair.cs" />
+    <Compile Include="Data\Helpers\SiteDataHelper.cs" />
+    <Compile Include="Entities\BASEEntityDefinitionParsingException.cs" />
+    <Compile Include="DependancyXmlAttributes.cs" />
+    <Compile Include="Entities\EntityDefinition.cs" />
+    <Compile Include="Entities\EntityManager.cs" />
+    <Compile Include="Entities\EntityXMLAttributes.cs" />
+    <Compile Include="Web\UI\Controls\BASEControl.cs" />
+    <Compile Include="Web\UI\Controls\HtmlSnippetDefinition.cs" />
+    <Compile Include="Modules\ModuleDefinition.cs" />
+    <Compile Include="Modules\ModuleDefinitionHelper.cs" />
+    <Compile Include="Modules\ModuleManager.cs" />
+    <Compile Include="Modules\ModuleXMLAttributes.cs" />
+    <Compile Include="Web\UI\Controls\PanelDefinition.cs" />
+    <Compile Include="Web\UI\Controls\PanelType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\GroupManager.cs" />
+    <Compile Include="Security\SecurityManager.cs" />
+    <Compile Include="Security\UserManager.cs" />
+    <Compile Include="Security\UserIdentityToken.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="Web\Sites\SectionManager.cs" />
+    <Compile Include="Web\SessionState\SessionKeys.cs" />
+    <Compile Include="Web\SessionState\SessionManager.cs" />
+    <Compile Include="Web\Sites\SiteManager.cs" />
+    <Compile Include="Web\TemplateManager.cs" />
+    <Compile Include="Web\UI\Controls\BASEUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\Controls\ControlManager.cs" />
+    <Compile Include="Xml\XmlDefinitionParsingException.cs" />
+    <Compile Include="Xml\IXmlAttributeList.cs" />
+    <Compile Include="Xml\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BASE.Data.LLDAL\BASE.Data.LLDAL.csproj">
+      <Project>{8F36B571-35C5-4588-8285-697AD1F318CF}</Project>
+      <Name>BASE.Data.LLDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BASE.Data.LLDAL\BASE.Data.LLDALDBSpecific.csproj">
+      <Project>{D1B31321-F5FD-4C1F-A54B-F3B5BD93D99C}</Project>
+      <Name>BASE.Data.LLDALDBSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BASE.Logging\BASE.Logging.csproj">
+      <Project>{92E14763-EA15-4303-8269-5F0FBC8ED5CE}</Project>
+      <Name>BASE.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Modules\ModulesEntities.cd" />
+    <None Include="Web\Sites\SiteManagement.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Content\" />
+    <Folder Include="Data\SecurityManagement\" />
+    <Folder Include="Data\SiteManagement\" />
+    <Folder Include="Data\UserManagement\" />
+    <Folder Include="IO\" />
+    <Folder Include="Services\" />
+    <Folder Include="Web\NewFolder1\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
