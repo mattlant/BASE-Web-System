@@ -2,7 +2,7 @@
 
 _From around 2007, provided for historical purposes only_
 
-An old development snapshot (__1 Library Only__) of a multi tenant website system I developed for use with clients - Think along the lines of SharePoint and similar systems.
+An old development snapshot (__1 Library Only__) of a multi-tenant/multi-site Content Management System (CMS) I developed for use with clients - Think along the lines of SharePoint and similar systems.
 
 It was actually quite advanced for it's time.
 
